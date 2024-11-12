@@ -43,7 +43,9 @@ jobs:
 
     - name: Create symbolic link for Google Chrome
       run: |
+        if [ ! -L /usr/bin/google-chrome ]; then
         sudo ln -s /usr/bin/google-chrome-stable /usr/bin/google-chrome
+        fi
 
     - name: Build and Run Tests
       run: mvn clean verify
