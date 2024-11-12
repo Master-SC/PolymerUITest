@@ -37,10 +37,7 @@ jobs:
           ${{ runner.os }}-maven-
           
     - name: Install Google Chrome and create symbolic link
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-        sudo ln -s /usr/bin/google-chrome-stable /usr/bin/google-chrome
+      run: sudo ln -s /usr/bin/google-chrome-stable /usr/bin/google-chrome
         
     - name: Build and Run Tests
       run: mvn clean verify
