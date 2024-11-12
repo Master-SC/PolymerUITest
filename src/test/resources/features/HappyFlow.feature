@@ -33,7 +33,7 @@ Feature: Purchase 2 Items - Happy Path
     And the Total should be recalculated correctly
 
     # Step 8: Proceed to Checkout
-    When I click on "CHECKOUT" Button
+    When I click on "CHECKOU" Button
 
     # Step 9: Complete Checkout Form using data from Excel
     And I enter my account information as follows:
