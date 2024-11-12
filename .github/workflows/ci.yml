@@ -35,7 +35,16 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-          
+
+    - name: Install Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable   
+
+    - name: Create symbolic link for Google Chrome
+      run: |
+        sudo ln -s /usr/bin/google-chrome-stable /usr/bin/google-chrome
+
     - name: Build and Run Tests
       run: mvn clean verify
 
