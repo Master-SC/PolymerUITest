@@ -36,9 +36,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
           
-    - name: Install Google Chrome and create symbolic link
-      run: sudo ln -s /usr/bin/google-chrome-stable /usr/bin/google-chrome
-        
     - name: Build and Run Tests
       run: mvn clean verify
 
