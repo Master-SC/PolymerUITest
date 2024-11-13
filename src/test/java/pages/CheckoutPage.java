@@ -1,5 +1,6 @@
 package pages;
 
+import utils.ConfigReader;
 import utils.ExcelReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -159,7 +160,7 @@ public class CheckoutPage {
 
 
     public void loadDataFromExcel() throws Exception {
-       checkoutData = ExcelReader.readCheckoutData("src/test/resources/testdata/CheckoutData.xlsx");
+       checkoutData = ExcelReader.readCheckoutData(ConfigReader.getProperty("excel.file.path"));
         getEmailField().sendKeys(checkoutData.get("Email"));
         getPhoneNumberField().sendKeys(checkoutData.get("Phone"));
         getAddressField().sendKeys(checkoutData.get("Address"));
@@ -179,7 +180,7 @@ public class CheckoutPage {
     }
 
     public String placeOrderButtonText() throws InterruptedException {
-        return getPlaceOrderButtonField().getCssValue("value").trim();
+        return getPlaceOrderButtonField().getAttribute("value");
     }
 
 

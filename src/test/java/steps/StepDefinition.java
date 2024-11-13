@@ -100,7 +100,7 @@ public class StepDefinition {
 
     @When("I click on {string} at Checkout Page" )
     public void I_click_on_place_order_button(String name) throws InterruptedException {
-//        Assert.assertEquals(checkoutPage.placeOrderButtonText(),name);
+        Assert.assertEquals(checkoutPage.placeOrderButtonText(),name);
         checkoutPage.placeOrder();
     }
 

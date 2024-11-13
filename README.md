@@ -1,5 +1,5 @@
 # **PolymerUITest**
-PolymerUITest is an automated testing framework developed for UI testing of applications built using Selenium and Cucumber, it implements Behavior-Driven Development (BDD) principles to ensure a robust and scalable test suite that’s easy to maintain and expand. This framework is structured with the Page Object Model (POM) to improve code readability and reusability.The framework is set up to run automated tests and generate detailed Cucumber reports, with integration for GitHub Actions to enable continuous integration and automated test execution.
+PolymerUITest is an automated testing framework designed for UI testing of applications using Selenium and Cucumber, built on Behavior-Driven Development (BDD) principles to deliver a scalable, maintainable test suite. It leverages the Page Object Model (POM) to enhance code readability and reusability. The framework supports automated test execution and generates comprehensive Cucumber reports, with seamless integration into GitHub Actions for continuous integration and automated test runs.
 
 ## Table of Contents
 * Overview
@@ -10,11 +10,12 @@ PolymerUITest is an automated testing framework developed for UI testing of appl
 * Running Tests
 * GitHub Actions Integration
 * Running CI Manually
+* Technical Debt and Future Improvements
 
 ## Overview
-PolymerUITest is a BDD framework designed to automate testing for web applications using Java and Cucumber. It allows users to write human-readable test scenarios that define application behavior, making it easier for both technical and non-technical stakeholders to understand the functionality being tested.
+PolymerUITest is a Behavior-Driven Development (BDD) framework created to automate web application testing using Java, Selenium, and Cucumber. It enables users to write clear, human-readable test scenarios that describe application behavior, making the tested functionality accessible to both technical and non-technical stakeholders.
 
-This framework is highly modular and allows for easy maintenance and extension of test scenarios, with support for generating Cucumber HTML reports for each test execution and automated test runs through GitHub Actions.
+The framework is highly modular, making it easy to maintain and extend test scenarios. It also supports generating Cucumber HTML reports for each test run and provides seamless integration with GitHub Actions for automated test executions.
 
 ## Features
 * **Cucumber BDD Framework**: Write and execute human-readable scenarios that describe application behavior.
@@ -27,10 +28,10 @@ This framework is highly modular and allows for easy maintenance and extension o
 
 To use this framework, you need the following:
 
-* Java (version 8 or higher)
+* Java (version 17 or higher)
 * Maven (for dependency management and running tests)
-* Git for version control
-* A supported browser (such as Chrome or Firefox) for executing web-based tests
+* Git (for version control)
+* A supported browser (such as Chrome) for executing web-based tests
 * GitHub Actions setup for automated test runs
 
 
@@ -50,7 +51,7 @@ Use Maven to install required dependencies:
 ```sh
 mvn clean install
 ```
-This command will download all necessary dependencies, including Cucumber, Selenium, and reporting libraries.
+This command will download all necessary dependencies, including Cucumber, Selenium, and other required libraries.
 
 ## Usage
 #### To create tests:
@@ -106,8 +107,8 @@ The workflow:
 ## Running CI Manually
 The workflow will trigger on any push to the repository or any pull request. To run it manually, navigate to the Actions tab on GitHub, select the workflow, and click on Re-run jobs.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Technical Debt and Future Improvements
+
+## Technical Debt and Future Improvements
 
 While the PolymerUITest project is a solid foundation for automated testing, there are areas where technical debt could be reduced and future improvements could be enhanced.
 
@@ -137,14 +138,15 @@ The GitHub Actions workflow might not be optimized for parallel test execution, 
 
 ###### Future Improvements:
 
-**Parallel Test Execution:**
-Use parallel test execution to speed up the test process, especially for large test suites. This can be achieved by configuring test runners or CI tools to run tests in parallel across different machines or containers by implementing Selenium Grid
-
 **Optimize Waits and Timeouts:**
 Review the step definitions for efficient handling of waits and timeouts. Instead of using arbitrary waits, use explicit waits (e.g., WebDriverWait) to ensure that elements are available before interactions.
 
+**Parallel Test Execution:**
+Use parallel test execution to speed up the test process, especially for large test suites. This can be achieved by configuring test runners or CI tools to run tests in parallel across different machines or containers by implementing Selenium Grid
+
 ### 3. Minimal Logging
 ###### Technical Debt:
+
 **Inadequate Traceability:**
 Without detailed logging at each step, it’s difficult to trace the test execution flow, especially during failures. Minimal logging limits visibility into test actions, assertions, and error points, leading to longer debugging times.
 
