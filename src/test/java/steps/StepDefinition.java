@@ -1,10 +1,8 @@
-package stepdefinition;
+package steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.After;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.*;
@@ -95,8 +93,8 @@ public class StepDefinition {
         basketPage.clickOnCheckoutButton();
     }
 
-    @When("I enter my account information as follows:")
-    public void I_enter_my_account_information_as_follows() throws Exception {
+    @When("I enter my account shipping and payment information")
+    public void I_enter_my_account_shipping_and_payment_information() throws Exception {
         checkoutPage.loadDataFromExcel();
     }
 

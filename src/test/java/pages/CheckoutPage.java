@@ -1,6 +1,6 @@
 package pages;
 
-import helper.ExcelReader;
+import utils.ExcelReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;

@@ -54,7 +54,7 @@ public class ConfirmationPage {
     }
 
     public String getThankYouMsgText() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         return getThankYouMsgLocator().getText().trim();
     }
 

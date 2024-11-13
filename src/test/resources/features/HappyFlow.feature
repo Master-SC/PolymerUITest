@@ -33,10 +33,10 @@ Feature: Purchase 2 Items - Happy Path
     And the Total should be recalculated correctly
 
     # Step 8: Proceed to Checkout
-    When I click on "CHECKOU" Button
+    When I click on "CHECKOUT" Button
 
     # Step 9: Complete Checkout Form using data from Excel
-    And I enter my account information as follows:
+    And I enter my account shipping and payment information
 #      Account Information
 #      | Email         | abc@abc.com      |
 #      | Phone         | 1111111111       |
